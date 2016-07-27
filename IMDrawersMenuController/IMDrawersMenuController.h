@@ -18,6 +18,8 @@
 @property (weak, nonatomic) id<IMDrawersMenuControllerDelegate> delegate;
 @property (strong, nonatomic) IMDrawersMenuView *menuView;
 @property (nonatomic) NSUInteger selectedIndex;
+@property (assign, nonatomic) NSTimeInterval openAnimationDuration;
+@property (assign, nonatomic) NSTimeInterval closeAnimationDuration;
 
 - (NSString *)excludedViewControllerClass;
 - (UIViewController *)selectedViewController;

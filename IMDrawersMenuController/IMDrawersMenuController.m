@@ -25,6 +25,18 @@
 
 @implementation IMDrawersMenuController
 
+#pragma mark - Init
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _openAnimationDuration = 0.2;
+        _closeAnimationDuration = 0.3;
+    }
+    return self;
+}
+
+
 #pragma mark - UIViewController
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -143,7 +155,7 @@
             [_delegate menuControllerWillDismissMenuView:self];
         }
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:_closeAnimationDuration delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.menuView.frame = CGRectMake(0.0, -self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
             self.contentView.frame = self.view.bounds;
         } completion:^(BOOL finished) {
@@ -161,7 +173,7 @@
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
         [self.menuView prepareForAnimation];
         
-        NSTimeInterval duration = 0.2;
+        NSTimeInterval duration = _openAnimationDuration;
         UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut;
         [UIView animateWithDuration:duration delay:0.0 options:options animations:^{
             self.contentView.frame = CGRectMake(0.0, self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);

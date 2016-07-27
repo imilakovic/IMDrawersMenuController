@@ -8,20 +8,31 @@
 
 #import "ViewController.h"
 
+#import "IMDrawersMenuController.h"
+
 @interface ViewController ()
 
 @end
 
+
 @implementation ViewController
+
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = RGB_COLOR(240, 240, 240);
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(menuBarButtonItemTapped:)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - Button actions
+
+- (void)menuBarButtonItemTapped:(UIBarButtonItem *)sender {
+    [self.im_menuController toggleMenuView];
 }
+
 
 @end
