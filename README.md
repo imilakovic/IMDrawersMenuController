@@ -31,7 +31,7 @@ IMDrawersMenuController has a very similar usage to UITabBarController. Please s
 
 ```objective-c
 IMDrawersMenuController *menuController = [IMDrawersMenuController new];
-menuController.viewControllers = viewControllers;
+menuController.viewControllers = yourViewControllers;
 ```
 
 ####3. Customize menu items
