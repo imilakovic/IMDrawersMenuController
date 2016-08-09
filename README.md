@@ -15,7 +15,11 @@ Please feel free to try the IMDrawersMenuControllerDemo project in Xcode. It dem
 
 ## Installation
 
-Simply drag & drop the IMDrawersMenuController folder to your project.
+### CocoaPods
+If you are using [CocoaPods](http://www.cocoapods.org), simply add `pod 'IMDrawersMenuController'` to your Podfile.
+
+### Drag & Drop
+Simply drag & drop the `IMDrawersMenuController` folder to your project.
 
 ## Usage
 
